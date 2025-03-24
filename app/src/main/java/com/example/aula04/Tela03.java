@@ -17,19 +17,19 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
-public class Tela02 extends AppCompatActivity {
+public class Tela03 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.tela_02);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tela_02), (v, insets) -> {
+        setContentView(R.layout.tela_03);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tela_03), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ListView listView = (ListView) findViewById(R.id.lista_02);
+        ListView listView = (ListView) findViewById(R.id.lista_03);
         Log.d("MainActivity","onCreate: Started.");
 
         ArrayList <String> nomes = new ArrayList<>();
@@ -52,12 +52,12 @@ public class Tela02 extends AppCompatActivity {
         listView.setAdapter(adapter);
 
     }
-    public void button2(View v) {
-        Intent intent = new Intent(v.getContext(), MainActivity.class);
+    public void button4(View v) {
+        Intent intent = new Intent(v.getContext(), Tela04.class);
         v.getContext().startActivity(intent);
     }
-    public void button3(View v) {
-        Intent intent = new Intent(v.getContext(), Tela03.class);
+    public void button5(View v) {
+        Intent intent = new Intent(v.getContext(), Tela02.class);
         v.getContext().startActivity(intent);
     }
 }
